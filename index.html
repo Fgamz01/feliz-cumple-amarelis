@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feliz Cumpleaños Amarelis 🌸</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fuentes elegantes desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <!-- Íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- =============================================
+     🔐 PANTALLA DE BLOQUEO
+     ============================================= -->
+<div id="lockscreen" class="lockscreen">
+  <div class="lock-particles"></div>
+  <div class="lock-card glass">
+    <div class="lock-icon">
+      <i class="fas fa-envelope-open-text"></i>
+    </div>
+    <h1 class="lock-title">Hay algo especial<br><em>esperándote aquí</em></h1>
+    <p class="lock-subtitle">Ingresa la contraseña para descubrir tu regalo</p>
+    <div class="lock-input-wrap">
+      <input
+        type="password"
+        id="passwordInput"
+        class="lock-input"
+        placeholder="Contraseña secreta..."
+        onkeydown="if(event.key==='Enter') checkPassword()"
+      />
+      <button class="lock-btn" onclick="checkPassword()">
+        <i class="fas fa-heart"></i> Entrar
+      </button>
+    </div>
+    <p id="lockError" class="lock-error hidden">
+      <i class="fas fa-times-circle"></i> Contraseña incorrecta, inténtalo de nuevo 🌸
+    </p>
+    <div class="lock-petals">
+      <span>🌸</span><span>💜</span><span>🌸</span><span>✨</span><span>💜</span>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
+     🌐 SITIO PRINCIPAL (oculto hasta acceder)
+     ============================================= -->
+<div id="mainSite" class="main-site hidden">
+
+  <!-- ---- NAVEGACIÓN ---- -->
+  <nav class="navbar glass">
+    <div class="nav-logo">🌸 Para nuestra amiguita Amarelis!!!</div>
+    <ul class="nav-links">
+      <li><a href="#inicio" onclick="scrollTo('inicio')">Inicio</a></li>
+      <li><a href="#cartas" onclick="scrollTo('cartas')">Cartas</a></li>
+      <li><a href="#recuerdos" onclick="scrollTo('recuerdos')">Recuerdos</a></li>
+      <li><a href="#galeria" onclick="scrollTo('galeria')">Galería</a></li>
+      <li><a href="#mensaje-final" onclick="scrollTo('mensaje-final')">Mensaje Final</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- =============================================
+       🏠 SECCIÓN 1: INICIO
+       ============================================= -->
+  <section id="inicio" class="section hero-section">
+    <div class="hero-bg-circles"></div>
+    <div class="floating-emojis">
+      <span class="fe fe-1">🌸</span>
+      <span class="fe fe-2">💜</span>
+      <span class="fe fe-3">✨</span>
+      <span class="fe fe-4">🌷</span>
+      <span class="fe fe-5">💫</span>
+      <span class="fe fe-6">🌸</span>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">✨ Con todo el cariño del mundo ✨</p>
+      <!-- ✏️ CAMBIA EL NOMBRE AQUÍ -->
+      <h1 class="hero-title">¡Feliz Cumpleaños,<br><em>Amarelis!</em> 🎂</h1>
+      <p class="hero-subtitle">
+        Hoy es un día tan especial como lo eres tú.<br>
+        Este sitio fue creado para que sintieras el gran amor y cariño que sentimos por ti y lo importante que eres para nuestras vidas.
+      </p>
+
+  <section id="cartas" class="section cartas-section">
+    <div class="section-header">
+      <h2 class="section-title">Elige una carta 💜</h2>
+      <p class="section-sub">Cada una guarda palabras escritas desde el corazón, solo para ti</p>
+    </div>
+
+    <div class="letter-selection">
+      <!-- Carta 1: Francisco -->
+      <!-- ✏️ Cambia "assets/images/francisco.jpg" por la ruta exacta de tu foto -->
+      <div class="letter-card" onclick="openLetter('francisco')">
+        <div class="letter-card-photo-wrap">
+          <img
+            class="letter-card-photo"
+            src="assets/images/playaa.jpeg"
+            alt="Francisco"
+            onload="this.style.opacity='1'; this.previousElementSibling && (this.previousElementSibling.style.display='none')"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+          />
+          <div class="letter-card-photo-placeholder">
+            <i class="fas fa-user"></i>
+            <span>Sube tu foto a<br>assets/images/francisco.jpg</span>
+          </div>
+        </div>
+        <div class="letter-card-overlay"></div>
+        <div class="letter-card-body">
+          <div class="letter-card-ribbon">Con amor</div>
+          <div class="letter-card-icon"><i class="fas fa-envelope"></i></div>
+          <h3>Carta de Francisco</h3>
+          <p>Una carta para mi best friend que a estado para mi siempre.</p>
+          <span class="letter-card-cta">Abrir carta <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <!-- Carta 2: Brandy -->
+      <!-- ✏️ Cambia "assets/images/brandy.jpg" por la ruta exacta de tu foto -->
+      <div class="letter-card" onclick="openLetter('brandy')">
+        <div class="letter-card-photo-wrap">
+          <img
+            class="letter-card-photo"
+            src="assets/images/universidad.jpeg"
+            alt="Brandy"
+            onload="this.style.opacity='1'"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+          />
+          <div class="letter-card-photo-placeholder">
+            <i class="fas fa-user"></i>
+            <span>Sube tu foto a<br>assets/images/brandy.jpg</span>
+          </div>
+        </div>
+        <div class="letter-card-overlay"></div>
+        <div class="letter-card-body">
+          <div class="letter-card-ribbon">Con amor</div>
+          <div class="letter-card-icon"><i class="fas fa-envelope"></i></div>
+          <h3>Carta de Brandy</h3>
+          <p>Una carta hecha con mucho amor para mi pulga.</p>
+          <span class="letter-card-cta">Abrir carta <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       💌 MODAL: SOBRE Y CARTA ANIMADA
+       ============================================= -->
+  <div id="letterModal" class="letter-modal hidden">
+    <div class="letter-modal-overlay" onclick="closeLetter()"></div>
+    <div class="letter-modal-inner">
+
+      <!-- Sobre animado -->
+      <div id="envelopeWrap" class="envelope-wrap">
+        <div class="envelope" id="envelope" onclick="openEnvelope()">
+          <div class="envelope-back"></div>
+          <div class="envelope-front">
+            <div class="envelope-flap" id="envelopeFlap"></div>
+            <div class="envelope-body">
+              <div class="envelope-seal">💜</div>
+            </div>
+          </div>
+          <p class="envelope-hint">Toca el sobre para abrirlo</p>
+        </div>
+      </div>
+
+      <!-- Carta desplegada -->
+      <div id="letterPaper" class="letter-paper hidden glass">
+        <div class="letter-paper-header">
+          <span class="letter-date" id="letterDate"></span>
+          <div class="letter-deco">🌸 ✨ 🌸</div>
+        </div>
+        <div class="letter-body">
+          <p class="letter-greeting" id="letterGreeting"></p>
+          <p class="letter-text" id="letterText"></p>
+          <p class="letter-signature" id="letterSignature"></p>
+        </div>
+        <button class="btn-close-letter" onclick="closeLetter()">
+          <i class="fas fa-times"></i> Cerrar carta
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================================
+       📸 SECCIÓN 3: RECUERDOS
+       ============================================= -->
+  <section id="recuerdos" class="section recuerdos-section">
+    <div class="section-header">
+      <h2 class="section-title">Nuestros Recuerdos 📸</h2>
+      <p class="section-sub">Pequeños momentos que llevan toda una historia</p>
+    </div>
+
+    <div class="memory-icons-grid">
+      <!-- Cada ícono abre un modal con foto/texto tipo polaroid -->
+      <!-- ✏️ Cambia el título, descripción e imagen en script.js (array memories[]) -->
+      <div class="memory-icon-card glass" onclick="openMemory(0)">
+        <div class="mic-icon"><i class="fas fa-heart"></i></div>
+        <p>Amistad</p>
+      </div>
+      <div class="memory-icon-card glass" onclick="openMemory(1)">
+        <div class="mic-icon"><i class="fas fa-camera"></i></div>
+        <p>Fotos juntas</p>
+      </div>
+      <div class="memory-icon-card glass" onclick="openMemory(2)">
+        <div class="mic-icon"><i class="fas fa-star"></i></div>
+        <p>Momentos únicos</p>
+      </div>
+      <div class="memory-icon-card glass" onclick="openMemory(3)">
+        <div class="mic-icon"><i class="fas fa-seedling"></i></div>
+        <p>Nuestra locuras</p>
+      </div>
+    </div>
+
+    <!-- Modal de recuerdo tipo polaroid -->
+    <div id="memoryModal" class="memory-modal hidden">
+      <div class="memory-overlay" onclick="closeMemory()"></div>
+      <div class="polaroid glass">
+        <!-- ✏️ La imagen se define en el array memories[] de script.js -->
+        <div class="polaroid-img-wrap">
+          <img id="memoryImg" src="" alt="Recuerdo" onerror="this.style.display='none'; document.getElementById('memoryPlaceholder').style.display='flex'"/>
+          <div id="memoryPlaceholder" class="polaroid-placeholder">
+            <i class="fas fa-image"></i>
+            <span>Tu foto aquí</span>
+          </div>
+        </div>
+        <div class="polaroid-caption">
+          <h4 id="memoryTitle"></h4>
+          <p id="memoryDesc"></p>
+        </div>
+        <button class="btn-close-mem" onclick="closeMemory()"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       🖼️ SECCIÓN 5: GALERÍA
+       ============================================= -->
+  <section id="galeria" class="section galeria-section">
+    <div class="section-header">
+      <h2 class="section-title">Galería 🖼️</h2>
+      <p class="section-sub">Un álbum lleno de instantes que guardo con cariño</p>
+    </div>
+
+    <!-- ✏️ Reemplaza src="" con la ruta de tus imágenes, ej: assets/images/foto1.jpg -->
+    <div class="gallery-grid">
+      <div class="gallery-item glass" onclick="openGallery(0)">
+        <img src="" alt="Foto 1" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex'"/>
+        <div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 1</span></div>
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item glass" onclick="openGallery(1)">
+        <img src="" alt="Foto 2" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex'"/>
+        <div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 2</span></div>
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item glass" onclick="openGallery(2)">
+        <img src="" alt="Foto 3" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex'"/>
+        <div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 3</span></div>
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item glass large" onclick="openGallery(3)">
+        <img src="" alt="Foto 4" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex'"/>
+        <div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 4</span></div>
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+      <div class="gallery-item glass" onclick="openGallery(4)">
+        <img src="" alt="Foto 5" onerror="this.parentElement.querySelector('.gallery-placeholder').style.display='flex'"/>
+        <div class="gallery-placeholder"><i class="fas fa-image"></i><span>Foto 5</span></div>
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+      </div>
+    </div>
+
+    <!-- Lightbox galería -->
+    <div id="galleryLightbox" class="lightbox hidden">
+      <div class="lightbox-overlay" onclick="closeGallery()"></div>
+      <div class="lightbox-inner">
+        <img id="lightboxImg" src="" alt=""/>
+        <button class="lightbox-close" onclick="closeGallery()"><i class="fas fa-times"></i></button>
+        <button class="lightbox-prev" onclick="galleryPrev()"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next" onclick="galleryNext()"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       🌟 SECCIÓN 6: MENSAJE FINAL
+       ============================================= -->
+  <section id="mensaje-final" class="section final-section">
+    <div class="final-bg"></div>
+    <div class="final-content glass">
+      <div class="final-stars">✨💜✨</div>
+      <!-- ✏️ Edita el mensaje final aquí -->
+      <h2 class="final-title">Porque te mereces<br><em>todo lo bonito</em></h2>
+      <p class="final-text">
+        Hoy no solo celebramos tu cumpleaños, celebramos tu forma de ser:<br>
+        tu luz, tu alegría, tu fuerza y la persona tan increíble que tenemos a nuestro lado.<br><br>
+        Que este año que comienza esté lleno de momentos increibles junto con las personas que más amas,<br>
+        y que todos tus sueños se hagan realidad.<br><br>
+        <strong>¡Feliz cumpleaños, Amarelis!!!!! 🎂💜</strong>
+      </p>
+      <div class="final-signature">— Con muco cariño y amor, Francisco y Brandy</div>
+      <div class="confetti-container" id="confettiContainer"></div>
+      <button class="btn-primary btn-confetti" onclick="launchConfetti()">
+        🎉 ¡Tirar confeti!
+      </button>
+    </div>
+  </section>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <p>Hecho con amor especialmente para ti · <span id="footerYear"></span></p>
+  </footer>
+
+</div><!-- fin #mainSite -->
+
+<script src="script.js"></script>
+</body>
+</html>
